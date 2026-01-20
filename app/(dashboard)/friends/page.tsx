@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { useAuth } from '@/app/providers'
 import { createSupabaseClient } from '@/lib/supabase/client'
 import { Card } from '@/components/ui/Card'
@@ -50,11 +51,17 @@ export default function FriendsPage() {
         .eq('status', 'accepted')
 
       if (data) {
-        const friendList = data.map((f) => {
+        const friendList: Array<{ id: string; display_name: string; avatar_url?: string; friendship_id: string }> = []
+        
+        data.forEach((f: any) => {
           const friend = f.requester_id === user.id ? f.addressee : f.requester
-          return {
-            ...friend,
-            friendship_id: f.id,
+          if (friend && typeof friend === 'object' && friend.id) {
+            friendList.push({
+              id: String(friend.id),
+              display_name: String(friend.display_name || ''),
+              avatar_url: friend.avatar_url ? String(friend.avatar_url) : undefined,
+              friendship_id: String(f.id),
+            })
           }
         })
 
