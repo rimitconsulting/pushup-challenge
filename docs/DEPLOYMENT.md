@@ -23,7 +23,7 @@ git add .
 git commit -m "Initial commit - PushUp Challenge MVP"
 
 # Create a new repository on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/pushup-challenge.git
+git remote add origin https://github.com/rimitconsulting/pushup-challenge.git
 git branch -M main
 git push -u origin main
 ```
@@ -85,7 +85,7 @@ Click **"Deploy"** in Vercel. Your app will be live in ~2 minutes! 🎉
 
 ```bash
 # On your VPS
-git clone https://github.com/YOUR_USERNAME/pushup-challenge.git
+git clone https://github.com/rimitconsulting/pushup-challenge.git
 cd pushup-challenge
 npm install
 npm run build

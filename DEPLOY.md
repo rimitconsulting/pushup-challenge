@@ -11,7 +11,7 @@ git add .
 git commit -m "PushUp Challenge MVP"
 
 # Create repo on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/pushup-challenge.git
+git remote add origin https://github.com/rimitconsulting/pushup-challenge.git
 git push -u origin main
 ```
 
